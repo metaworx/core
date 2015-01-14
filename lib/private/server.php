@@ -73,6 +73,15 @@ class Server extends SimpleContainer implements IServerContainer {
 		$this->registerService('ContactsManager', function ($c) {
 			return new ContactsManager();
 		});
+
+		$this->registerService('EncryptionManager', function ($c) {
+			return new Encryption\EncryptionManager();
+		});
+
+		$this->registerService('EncryptionKeyStorage', function ($c) {
+			return new Encryption\KeyStorage();
+		});
+
 		$this->registerService('PreviewManager', function ($c) {
 			return new PreviewManager();
 		});
@@ -301,6 +310,20 @@ class Server extends SimpleContainer implements IServerContainer {
 	 */
 	function getContactsManager() {
 		return $this->query('ContactsManager');
+	}
+
+	/**
+	 * @return \OC\Encryption\Manager
+	 */
+	function getEncryptionManager() {
+		return $this->query('EncryptionManager');
+	}
+
+	/**
+	 * @return \OCP\Encryption\IKeyStorage
+	 */
+	function getEncryptionKeyStorage() {
+		return $this->query('EncryptionKeyStorage');
 	}
 
 	/**
