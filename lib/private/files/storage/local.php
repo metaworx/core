@@ -308,7 +308,7 @@ if (\OC_Util::runningOnWindows()) {
 		 * @param string $path
 		 * @return string
 		 */
-		protected function getSourcePath($path) {
+		public function getSourcePath($path) {
 			$fullPath = $this->datadir . $path;
 			return $fullPath;
 		}
