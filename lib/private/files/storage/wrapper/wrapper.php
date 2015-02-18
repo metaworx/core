@@ -22,6 +22,8 @@
  */
 namespace OC\Files\Storage\Wrapper;
 
+use OCP\Files\InvalidPathException;
+
 class Wrapper implements \OC\Files\Storage\Storage {
 	/**
 	 * @var \OC\Files\Storage\Storage $storage
@@ -490,5 +492,15 @@ class Wrapper implements \OC\Files\Storage\Storage {
 	 */
 	public function getDirectDownload($path) {
 		return $this->storage->getDirectDownload($path);
+	}
+
+	/**
+	 * @param string $path the path of the target folder
+	 * @param string $fileName the name of the file itself
+	 * @return void
+	 * @throws InvalidPathException
+	 */
+	public function verifyPath($path, $fileName) {
+		$this->storage->verifyPath($path, $fileName);
 	}
 }
