@@ -156,8 +156,9 @@ class Encryption extends Wrapper {
 	 * @return resource
 	 */
 	public function fopen($path, $mode) {
-		// todo call encryption stream wrapper
-		return $this->storage->fopen($path, $mode);
+		$source = $this->storage->fopen($path, $mode);
+		$handle = \OC\Files\Stream\Encryption::wrap($source);
+		return $handle;
 	}
 
 	/**
