@@ -70,6 +70,7 @@ class Manager implements \OCP\Encryption\IManager {
 	 * @return \OCP\Encryption\IEncryptionModule
 	 */
 	function getEncryptionModule($module = null) {
+		// thow exception if "$module" doesn't exists
 		return $module;
 	}
 

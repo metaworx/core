@@ -34,14 +34,19 @@ class Encryption extends Wrapper {
 	/** @var \OCP\Encryption\IManager */
 	private $encryptionManager;
 
+	/** @var string */
+	private $uid;
+
 	/**
 	 * @param array $parameters
 	 * @param \OCP\Encryption\IManager $encryptionManager
+	 * @param string $uid user who perform the read/write operation (null for public access)
 	 */
-	function __construct($parameters, \OCP\Encryption\IManager $encryptionManager, \OC\Encryption\Util $util) {
+	function __construct($parameters, \OCP\Encryption\IManager $encryptionManager, \OC\Encryption\Util $util, $uid) {
 		$this->mountPoint = $parameters['mountPoint'];
 		$this->encryptionManager = $encryptionManager;
 		$this->util = $util;
+		$this->uid = $uid;
 		parent::__construct($parameters);
 	}
 
@@ -156,9 +161,36 @@ class Encryption extends Wrapper {
 	 * @return resource
 	 */
 	public function fopen($path, $mode) {
-		$source = $this->storage->fopen($path, $mode);
-		$handle = \OC\Files\Stream\Encryption::wrap($source);
-		return $handle;
+
+		$shouldEncrypt = false;
+		$header = $this->getHeader($path);
+		$encryptionModuleId = $this->util->getEncryptionModuleId($header);
+
+		if (
+			$mode === 'w'
+			|| $mode === 'w+'
+			|| $mode === 'wb'
+			|| $mode === 'wb+'
+		) {
+			$fullPath = $this->getFullPath($path);
+			$encryptionModule = $this->encryptionManager->getEncryptionModule($encryptionModuleId);
+			$shouldEncrypt = $encryptionModule->shouldEncrypt($fullPath);
+		} else {
+			// only get encryption module if we found one in the header
+			if ($encryptionModuleId) {
+				$encryptionModule = $this->encryptionManager->getEncryptionModule($encryptionModuleId);
+				$shouldEncrypt = true;
+			}
+		}
+
+		if($shouldEncrypt && $encryptionModule) {
+			$source = $this->storage->fopen($path, $mode);
+			$handle = \OC\Files\Stream\Encryption::wrap($source, $path, $header,
+				$this->uid, $encryptionModule, $this->storage, $this->util);
+			return $handle;
+		} else {
+			return $this->storage->fopen($path, $mode);
+		}
 	}
 
 	/**
@@ -178,9 +210,12 @@ class Encryption extends Wrapper {
 	 * @return array
 	 */
 	protected function getHeader($path) {
-		$handle = $this->storage->fopen($path, 'r');
-		$header = fread($handle, $this->util->getHeaderSize());
-		fclose($handle);
+		$header = '';
+		if ($this->storage->file_exists($path)) {
+			$handle = $this->storage->fopen($path, 'r');
+			$header = fread($handle, $this->util->getHeaderSize());
+			fclose($handle);
+		}
 		return $this->util->readHeader($header);
 	}
 

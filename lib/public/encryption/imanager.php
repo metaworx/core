@@ -63,7 +63,7 @@ interface IManager {
 	 * get a specific encryption module
 	 *
 	 * @param string $module unique key of encryption module, if no module is defined we take the default module
-	 * @return \OCP\IEncryptionModule
+	 * @return \OCP\Encryption\IEncryptionModule
 	 */
 	function getEncryptionModule($module = null);
 }

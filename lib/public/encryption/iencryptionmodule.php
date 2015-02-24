@@ -44,12 +44,13 @@ interface IEncryptionModule {
 	 *
 	 * @param string $path to the file
 	 * @param array $header contains the header data read from the file
+	 * @param array $accessList who has access to the file contains the key 'users' and 'public'
 	 *
 	 * $return array $header contain data as key-value pairs which should be
-	 *                       written to the header, in case of a read operation
+	 *                       written to the header, in case of a write operation
 	 *                       or if no additional data is needed return a empty array
 	 */
-	public function begin($path, $header);
+	public function begin($path, $header, $accessList);
 
 	/**
 	 * last chunk received. This is the place where you can perform some final
@@ -66,16 +67,15 @@ interface IEncryptionModule {
 	 * encrypt data
 	 *
 	 * @param string $data you want to encrypt
-	 * @param array $accessList who has access to the file contains the key 'users' and 'public'
 	 * @return mixed encrypted data
 	 */
-	public function encrypt($data, $accessList);
+	public function encrypt($data);
 
 	/**
 	 * decrypt data
 	 *
 	 * @param string $data you want to decrypt
-	 * @param string $user decrypt as user
+	 * @param string $user decrypt as user (null for public access)
 	 * @return mixed decrypted data
 	 */
 	public function decrypt($data, $user);
