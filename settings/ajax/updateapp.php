@@ -2,7 +2,7 @@
 /**
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Frank Karlitschek <frank@owncloud.org>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin Appelman <icewind@owncloud.com>
  * @author Thomas Müller <thomas.mueller@tmit.eu>

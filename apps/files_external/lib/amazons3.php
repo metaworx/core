@@ -7,7 +7,6 @@
  * @author Christopher T. Johnson <ctjctj@gmail.com>
  * @author Johan Björk <johanimon@gmail.com>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
  * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Philipp Kapfer <philipp.kapfer@gmx.at>
  * @author Robin Appelman <icewind@owncloud.com>

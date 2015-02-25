@@ -1,6 +1,5 @@
 <?php
 /**
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Florin Peter <github@florin-peter.de>

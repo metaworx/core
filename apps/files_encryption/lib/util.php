@@ -1,7 +1,6 @@
 <?php
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Florin Peter <github@florin-peter.de>
  * @author jknockaert <jasper@knockaert.nl>

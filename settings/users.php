@@ -5,7 +5,7 @@
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Clark Tomlinson <fallen013@gmail.com>
  * @author Daniel Molkentin <daniel@molkentin.de>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Morris Jobke <hey@morrisjobke.de>

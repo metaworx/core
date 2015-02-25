@@ -1,7 +1,7 @@
 <?php
 /**
- * @author Bjoern Schiessle <schiessle@owncloud.com>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Joas Schilling <nickvergessen@gmx.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin McCorkell <rmccorkell@karoshi.org.uk>

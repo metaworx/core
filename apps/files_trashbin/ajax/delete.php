@@ -1,7 +1,6 @@
 <?php
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin Appelman <icewind@owncloud.com>

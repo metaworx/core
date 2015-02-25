@@ -5,13 +5,12 @@
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
  * @author Bernhard Posselt <dev@bernhard-posselt.com>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author davidgumberg <davidnoizgumberg@gmail.com>
- * @author Florian Scholz <florianscholz@bgstyle.de>
+ * @author Florian Scholz <FlorianScholz@bgstyle.de>
  * @author Florin Peter <github@florin-peter.de>
  * @author Frank Karlitschek <frank@owncloud.org>
- * @author Georg Ehrke <georg@owncloud.com>
  * @author Georg Ehrke <georg@ownCloud.com>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Jan-Christoph Borchardt <hey@jancborchardt.net>
@@ -19,7 +18,7 @@
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author marc0s <marcos@tenak.net>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Morris Jobke <hey@morrisjobke.de>
  * @author Owen Winkler <a_github@midnightcircus.com>
  * @author Ramiro Aparicio <rapariciog@gmail.com>

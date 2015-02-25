@@ -2,7 +2,6 @@
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Brice Maron <brice@bmaron.net>
  * @author dratini0 <dratini0@gmail.com>
@@ -13,7 +12,7 @@
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author josh4trunks <joshruehlig@gmail.com>
  * @author Lukas Reschke <lukas@owncloud.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author mvn23 <schopdiedwaas@gmail.com>
  * @author Nicolai Ehemann <en@enlightened.de>
  * @author Robin Appelman <icewind@owncloud.com>

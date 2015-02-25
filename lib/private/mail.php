@@ -7,7 +7,7 @@
  * @author Joas Schilling <nickvergessen@gmx.de>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author Lukas Reschke <lukas@owncloud.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Morris Jobke <hey@morrisjobke.de>
  * @author Thomas Müller <thomas.mueller@tmit.eu>
  *

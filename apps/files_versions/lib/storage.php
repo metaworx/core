@@ -1,11 +1,10 @@
 <?php
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Felix Moeller <mail@felixmoeller.de>
  * @author Florin Peter <github@florin-peter.de>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Morris Jobke <hey@morrisjobke.de>

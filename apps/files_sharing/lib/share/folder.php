@@ -1,8 +1,8 @@
 <?php
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  *
  * @copyright Copyright (c) 2015, ownCloud, Inc.
  * @license AGPL-3.0

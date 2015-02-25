@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin McCorkell <rmccorkell@karoshi.org.uk>

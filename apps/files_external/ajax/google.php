@@ -4,7 +4,6 @@
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author Lukas Reschke <lukas@owncloud.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
  * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Robin Appelman <icewind@owncloud.com>
  * @author Volkan Gezer <volkangezer@gmail.com>

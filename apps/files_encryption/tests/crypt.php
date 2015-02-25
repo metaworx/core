@@ -1,7 +1,6 @@
 <?php
 /**
  * @author Andreas Fischer <bantu@owncloud.com>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Florin Peter <github@florin-peter.de>
  * @author Joas Schilling <nickvergessen@gmx.de>

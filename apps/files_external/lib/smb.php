@@ -2,7 +2,7 @@
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Philipp Kapfer <philipp.kapfer@gmx.at>
  * @author Robin Appelman <icewind@owncloud.com>
  * @author Robin McCorkell <rmccorkell@karoshi.org.uk>

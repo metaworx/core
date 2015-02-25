@@ -2,7 +2,7 @@
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
  * @author Lukas Reschke <lukas@owncloud.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  *
  * @copyright Copyright (c) 2015, ownCloud, Inc.
  * @license AGPL-3.0

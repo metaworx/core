@@ -1,6 +1,5 @@
 <?php
 /**
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Jan-Christoph Borchardt <hey@jancborchardt.net>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>

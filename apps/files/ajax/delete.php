@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Frank Karlitschek <frank@owncloud.org>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Joas Schilling <nickvergessen@gmx.de>

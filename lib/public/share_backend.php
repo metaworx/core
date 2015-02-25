@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Joas Schilling <nickvergessen@gmx.de>
  * @author Robin McCorkell <rmccorkell@karoshi.org.uk>
  *

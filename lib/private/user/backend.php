@@ -5,7 +5,7 @@
  * @author Bart Visscher <bartv@thisnet.nl>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Dominik Schmidt <dev@dominik-schmidt.de>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Joas Schilling <nickvergessen@gmx.de>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>

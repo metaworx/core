@@ -2,7 +2,6 @@
 /**
  * @author Christian Berendt <berendt@b1-systems.de>
  * @author hkjolhede <hkjolhede@gmail.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
  * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Robin Appelman <icewind@owncloud.com>
  * @author Ross Nicoll <jrn@jrn.me.uk>

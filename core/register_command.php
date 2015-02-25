@@ -1,10 +1,6 @@
 <?php
 /**
- * @author Andreas Fischer <bantu@owncloud.com>
- * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Morris Jobke <hey@morrisjobke.de>
- * @author Robin Appelman <icewind@owncloud.com>
  * @author Thomas Müller <thomas.mueller@tmit.eu>
  * @author Vincent Petry <pvince81@owncloud.com>
  *
@@ -24,8 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-
-/** @var $application Symfony\Component\Console\Application */
 $application->add(new OC\Core\Command\Status);
 
 if (\OC::$server->getConfig()->getSystemValue('installed', false)) {

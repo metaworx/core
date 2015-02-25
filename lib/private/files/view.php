@@ -2,7 +2,6 @@
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
  * @author Florin Peter <github@florin-peter.de>
  * @author Jesus Macias <jmacias@full-on-net.com>
@@ -11,7 +10,6 @@
  * @author Klaas Freitag <freitag@owncloud.com>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Luke Policinski <lpolicinski@gmail.com>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
  * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Morris Jobke <hey@morrisjobke.de>
  * @author Robin Appelman <icewind@owncloud.com>

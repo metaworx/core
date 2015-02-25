@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Boris Rybalkin <ribalkin@gmail.com>
+ * @author Bernhard Posselt <dev@bernhard-posselt.com>
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
@@ -27,7 +27,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-
 try {
 
 	require_once 'lib/base.php';

@@ -2,7 +2,7 @@
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Florian Pritz <bluewind@xinu.at>
  * @author Frank Karlitschek <frank@owncloud.org>
  * @author Joas Schilling <nickvergessen@gmx.de>

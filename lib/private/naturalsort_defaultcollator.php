@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author AW-UC <git@a-wesemann.de>
  * @author Joas Schilling <nickvergessen@gmx.de>
  *
  * @copyright Copyright (c) 2015, ownCloud, Inc.

@@ -1,6 +1,5 @@
 <?php
 /**
- * @author Georg Ehrke <georg@owncloud.com>
  * @author Georg Ehrke <georg@ownCloud.com>
  * @author Joas Schilling <nickvergessen@gmx.de>
  *

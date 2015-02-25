@@ -3,7 +3,6 @@
  * @author Andreas Fischer <bantu@owncloud.com>
  * @author Owen Winkler <a_github@midnightcircus.com>
  * @author Thomas Müller <thomas.mueller@tmit.eu>
- * @author Victor Dubiniuk <dubiniuk@owncloud.com>
  * @author Vincent Petry <pvince81@owncloud.com>
  *
  * @copyright Copyright (c) 2015, ownCloud, Inc.

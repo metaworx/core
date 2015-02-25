@@ -2,6 +2,7 @@
 /**
  * @author hkjolhede <hkjolhede@gmail.com>
  * @author Joas Schilling <nickvergessen@gmx.de>
+ * @author Morris Jobke <hey@morrisjobke.de>
  * @author Robin Appelman <icewind@owncloud.com>
  *
  * @copyright Copyright (c) 2015, ownCloud, Inc.

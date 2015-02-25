@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author AW-UC <git@a-wesemann.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin McCorkell <rmccorkell@karoshi.org.uk>
  * @author Vincent Petry <pvince81@owncloud.com>

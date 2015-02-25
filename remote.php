@@ -2,7 +2,7 @@
 /**
  * @author Brice Maron <brice@bmaron.net>
  * @author Christopher Schäpers <kondou@ts.unde.re>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Jörn Friedrich Dreyer <jfd@butonic.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Robin Appelman <icewind@owncloud.com>

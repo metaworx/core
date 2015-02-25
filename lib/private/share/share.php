@@ -2,7 +2,7 @@
 /**
  * @author Bart Visscher <bartv@thisnet.nl>
  * @author Bernhard Reiter <ockham@raz.or.at>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
+ * @author Björn Schießle <schiessle@owncloud.com>
  * @author Christopher Schäpers <kondou@ts.unde.re>
  * @author Daniel Hansson <enoch85@gmail.com>
  * @author Joas Schilling <nickvergessen@gmx.de>

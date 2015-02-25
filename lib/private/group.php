@@ -2,13 +2,13 @@
 /**
  * @author Arthur Schiwon <blizzz@owncloud.com>
  * @author Bart Visscher <bartv@thisnet.nl>
- * @author Bjoern Schiessle <schiessle@owncloud.com>
  * @author Björn Schießle <schiessle@owncloud.com>
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
+ * @author goodkiller <markopraakli@gmail.com>
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author macjohnny <estebanmarin@gmx.ch>
- * @author Michael Gapczynski <gapczynskim@gmail.com>
+ * @author Michael Gapczynski <GapczynskiM@gmail.com>
  * @author Morris Jobke <hey@morrisjobke.de>
  * @author Qingping Hou <dave2008713@gmail.com>
  * @author Robin Appelman <icewind@owncloud.com>

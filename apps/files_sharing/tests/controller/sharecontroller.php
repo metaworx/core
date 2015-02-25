@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Georg Ehrke <georg@owncloud.com>
+ * @author Georg Ehrke <georg@ownCloud.com>
  * @author Lukas Reschke <lukas@owncloud.com>
  * @author Vincent Cloutier <vincent1cloutier@gmail.com>
  *
