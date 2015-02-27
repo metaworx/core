@@ -102,6 +102,32 @@ class StoragesController extends Controller {
 
 
 	/**
+	 * Get an external storage entry.
+	 *
+	 * @param int $id storage id
+	 * @param bool $isPersonal
+	 *
+	 * @return DataResponse
+	 */
+	public function show($id, $isPersonal) {
+		try {
+			$storage = $this->service->getStorage($id, $isPersonal);
+		} catch (NotFoundException $e) {
+			return new DataResponse(
+				[
+					'message' => (string)$this->l10n->t('Storage with id "%i" not found', array($id))
+				],
+				Http::STATUS_NOT_FOUND
+			);
+		}
+
+		return new DataResponse(
+			$storage,
+			Http::STATUS_OK
+		);
+	}
+
+	/**
 	 * Create an external storage entry.
 	 *
 	 * @param bool $isPersonal whether the mount point is personal

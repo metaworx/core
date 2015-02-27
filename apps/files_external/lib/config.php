@@ -32,6 +32,10 @@ class OC_Mount_Config {
 	const MOUNT_TYPE_USER = 'user';
 	const MOUNT_TYPE_PERSONAL = 'personal';
 
+	// getBackendStatus return types
+	const STATUS_SUCCESS = 0;
+	const STATUS_ERROR = 1;
+
 	// whether to skip backend test (for unit tests, as this static class is not mockable)
 	public static $skipTest = false;
 
@@ -438,11 +442,11 @@ class OC_Mount_Config {
 	 *
 	 * @param string $class backend class name
 	 * @param array $options backend configuration options
-	 * @return bool true if the connection succeeded, false otherwise
+	 * @return int see self::STATUS_*
 	 */
-	private static function getBackendStatus($class, $options, $isPersonal) {
+	public static function getBackendStatus($class, $options, $isPersonal) {
 		if (self::$skipTest) {
-			return true;
+			return self::STATUS_SUCCESS;
 		}
 		foreach ($options as &$option) {
 			$option = self::setUserVars(OCP\User::getUser(), $option);
@@ -450,13 +454,14 @@ class OC_Mount_Config {
 		if (class_exists($class)) {
 			try {
 				$storage = new $class($options);
-				return $storage->test($isPersonal);
+				if ($storage->test($isPersonal)) {
+					return self::STATUS_SUCCESS;
+				}
 			} catch (Exception $exception) {
 				\OCP\Util::logException('files_external', $exception);
-				return false;
 			}
 		}
-		return false;
+		return self::STATUS_ERROR;
 	}
 
 	/**
@@ -535,7 +540,7 @@ class OC_Mount_Config {
 		self::writeData($isPersonal ? OCP\User::getUser() : null, $mountPoints);
 
 		$result = self::getBackendStatus($class, $classOptions, $isPersonal);
-		if ($result && $isNew) {
+		if ($result === self::STATUS_SUCCESS && $isNew) {
 			\OC_Hook::emit(
 				\OC\Files\Filesystem::CLASSNAME,
 				\OC\Files\Filesystem::signal_create_mount,

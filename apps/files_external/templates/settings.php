@@ -18,7 +18,7 @@
 			<tr <?php print_unescaped(isset($mount['mountpoint']) ? 'class="'.OC_Util::sanitizeHTML($mount['class']).'"' : 'id="addMountPoint"'); ?> data-id="<?php p($mount['id']) ?>">
 				<td class="status">
 				<?php if (isset($mount['status'])): ?>
-					<span class="<?php p(($mount['status']) ? 'success' : 'error'); ?>"></span>
+					<span class="<?php p(($mount['status'] === \OC_Mount_Config::STATUS_SUCCESS) ? 'success' : 'error'); ?>"></span>
 				<?php endif; ?>
 				</td>
 				<td class="mountPoint"><input type="text" name="mountPoint"

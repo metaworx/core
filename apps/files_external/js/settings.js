@@ -9,17 +9,6 @@
  */
 (function(){
 
-function updateStatus(statusEl, result){
-	statusEl.removeClass('success error loading-small');
-	if (result && result.status === 'success' && result.data.message) {
-		statusEl.addClass('success');
-		return true;
-	} else {
-		statusEl.addClass('error');
-		return false;
-	}
-}
-
 /**
  * Returns the selection of applicable users in the given configuration row
  *
@@ -51,6 +40,12 @@ function highlightInput($input) {
  */
 var Storage = function(id) {
 	this.id = id;
+};
+// Keep this in sync with \OC_Mount_Config::STATUS_*
+Storage.Status = {
+	IN_PROGRESS: -1,
+	SUCCESS: 0,
+	ERROR: 1
 };
 Storage.prototype = {
 	_url: 'apps/files_external/storages',
@@ -107,7 +102,7 @@ Storage.prototype = {
 	/**
 	 * Creates or saves the storage.
 	 *
-	 * @param {Function} [options.success] success callback, receives model as argument
+	 * @param {Function} [options.success] success callback, receives result as argument
 	 * @param {Function} [options.error] error callback
 	 */
 	save: function(options) {
@@ -134,7 +129,7 @@ Storage.prototype = {
 			success: function(result) {
 				self.id = result.id;
 				if (_.isFunction(options.success)) {
-					options.success(self);
+					options.success(result);
 				}
 			},
 			error: options.error
@@ -142,12 +137,43 @@ Storage.prototype = {
 	},
 
 	/**
+	 * Recheck the storage
+	 *
+	 * @param {Function} [options.success] success callback, receives result as argument
+	 * @param {Function} [options.error] error callback
+	 */
+	recheck: function(options) {
+		if (!_.isNumber(this.id)) {
+			if (_.isFunction(options.error)) {
+				options.error();
+			}
+			return;
+		}
+		$.ajax({
+			type: 'GET',
+			url: OC.generateUrl(this._url + '/{id}', {id: this.id}),
+			data: {
+				isPersonal: !!this.isPersonal
+			},
+			success: options.success,
+			error: options.error
+		});
+	},
+
+	/**
 	 * Deletes the storage
 	 *
-	 * @param {Function} [options.success] success callback, receives model as argument
+	 * @param {Function} [options.success] success callback
 	 * @param {Function} [options.error] error callback
 	 */
 	destroy: function(options) {
+		if (!_.isNumber(this.id)) {
+			// the storage hasn't even been created => success
+			if (_.isFunction(options.success)) {
+				options.success();
+			}
+			return;
+		}
 		var self = this;
 		$.ajax({
 			type: 'DELETE',
@@ -155,11 +181,7 @@ Storage.prototype = {
 			data: {
 				isPersonal: !!this.isPersonal
 			},
-			success: function() {
-				if (_.isFunction(options.success)) {
-					options.success(self);
-				}
-			},
+			success: options.success,
 			error: options.error
 		});
 	},
@@ -274,11 +296,10 @@ var MountConfig = {
 			return false;
 		}
 
-		var statusSpan = $tr.find('.status span');
-		statusSpan.addClass('loading-small').removeClass('error success');
+		MountConfig.updateStatus($tr, Storage.Status.IN_PROGRESS);
 		storage.save({
 			success: function(result) {
-				// TODO: update status
+				MountConfig.updateStatus($tr, result.status);
 				$tr.attr('data-id') = result.id;
 
 				if (_.isFunction(callback)) {
@@ -286,9 +307,54 @@ var MountConfig = {
 				}
 			},
 			error: function() {
+				MountConfig.updateStatus($tr, Storage.Status.ERROR);
 			}
 		});
-		return status;
+	},
+
+	/**
+	 * Recheck storage availability
+	 *
+	 * @param {jQuery} $tr storage row
+	 * @return {boolean} success
+	 */
+	recheckStorage: function($tr) {
+		var isPersonal = $('#externalStorage').data('admin') !== true;
+		var storage = this.getStorage($tr, isPersonal);
+		if (!storage.validate()) {
+			return false;
+		}
+
+		MountConfig.updateStatus($tr, Storage.Status.IN_PROGRESS);
+		storage.recheck({
+			success: function(result) {
+				MountConfig.updateStatus($tr, result.status);
+			},
+			error: function() {
+				MountConfig.updateStatus($tr, Storage.Status.ERROR);
+			}
+		});
+	},
+
+	/**
+	 * Update status display
+	 *
+	 * @param {jQuery} $tr
+	 * @param {int} status
+	 */
+	updateStatus: function($tr, status) {
+		var $statusSpan = $tr.find('.status span');
+		$statusSpan.removeClass('success error loading-small');
+		switch (status) {
+			case Storage.Status.IN_PROGRESS:
+				$statusSpan.addClass('loading-small');
+				break;
+			case Storage.Status.SUCCESS:
+				$statusSpan.addClass('success');
+				break;
+			default:
+				$statusSpan.addClass('error');
+		}
 	}
 };
 
@@ -529,7 +595,7 @@ $(document).ready(function() {
 	});
 
 	$externalStorage.on('click', '.status>span', function() {
-		MountConfig.saveStorage($(this).closest('tr'));
+		MountConfig.recheckStorage($(this).closest('tr'));
 	});
 
 	$('#sslCertificate').on('click', 'td.remove>img', function() {
@@ -542,13 +608,14 @@ $(document).ready(function() {
 	$externalStorage.on('click', 'td.remove>img', function() {
 		var $tr = $(this).closest('tr');
 		var storage = new OCA.External.Storage($tr.data('id'));
-		var statusSpan = $tr.find('.status span');
-		statusSpan.addClass('loading-small').removeClass('error success');
+		MountConfig.updateStatus($tr, Storage.Status.IN_PROGRESS);
 
 		storage.destroy({
 			success: function() {
 				$tr.remove();
-				// TODO: update status
+			},
+			error: function() {
+				MountConfig.updateStatus($tr, Storage.Status.ERROR);
 			}
 		});
 	});

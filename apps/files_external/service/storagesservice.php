@@ -193,6 +193,36 @@ class StoragesService {
 	}
 
 	/**
+	 * Get a storage with status
+	 *
+	 * @param int $id
+	 * @param bool $isPersonal
+	 *
+	 * @return array
+	 */
+	public function getStorage($id, $isPersonal) {
+		$user = null;
+		if ($isPersonal) {
+			$user = $this->userSession->getUser()->getUID();
+		}
+
+		$allStorages = $this->readConfig($user);
+
+		if (!isset($allStorages[$id])) {
+			throw new NotFoundException('Storage with id "' . $id . '" not found');
+		}
+
+		$storage = $allStorages[$id];
+		$storage['status'] = \OC_Mount_Config::getBackendStatus(
+			$storage['backendClass'],
+			$storage['backendOptions'],
+			$isPersonal
+		);
+
+		return $storage;
+	}
+
+	/**
 	 * Add new storage to the configuration
 	 *
 	 * @param array $newStorage storage attributes
@@ -229,6 +259,9 @@ class StoragesService {
 		);
 		 */
 
+		// TODO: get an ID
+		// return $this->getStorage($id, $isPersonal);
+		$newStorage['status'] = \OC_Mount_Config::STATUS_SUCCESS;
 		return $newStorage;
 	}
 
@@ -260,7 +293,7 @@ class StoragesService {
 
 		$this->writeConfig($user, $allStorages);
 
-		return $storage;
+		return $this->getStorage($id, $isPersonal);
 	}
 
 	/**
