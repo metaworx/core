@@ -20,7 +20,8 @@
 			<exclude>
 				<directory suffix=".php">../3rdparty</directory>
 				<directory suffix=".php">../apps/files/l10n</directory>
-				<directory suffix=".php">../apps/files_external</directory>
+				<directory suffix=".php">../apps/files_external/l10n</directory>
+				<directory suffix=".php">../apps/files_external/3rdparty</directory>
 				<directory suffix=".php">../apps/files_versions/l10n</directory>
 				<directory suffix=".php">../apps/files_encryption/l10n</directory>
 				<directory suffix=".php">../apps/files_encryption/3rdparty</directory>
